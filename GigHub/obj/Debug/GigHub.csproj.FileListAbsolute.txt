@@ -248,3 +248,4 @@ C:\Users\Admin\source\repos\GigHub\GigHub\obj\Debug\GigHub.csproj.CoreCompileInp
 C:\Users\Admin\source\repos\GigHub\GigHub\obj\Debug\GigHub.csproj.CopyComplete
 C:\Users\Admin\source\repos\GigHub\GigHub\obj\Debug\GigHub.dll
 C:\Users\Admin\source\repos\GigHub\GigHub\obj\Debug\GigHub.pdb
+C:\Users\dhnsen\source\repos\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddForeignKeyPropertiesToGig.resources
