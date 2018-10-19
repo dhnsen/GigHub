@@ -34,6 +34,12 @@ textarea {
 .navbar-inverse .navbar-brand {
     color: #fff;
 }
+.navbar-brand{
+    font-weight: bold;
+}
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: #ff4342;
+}
 body {
     font-size: 17px;
 }
@@ -49,8 +55,12 @@ font-family: Lato, Helvetica, Arial, sans-serif;
     padding: 20px 15px;
     font-size: 17px;
 }
-    .form-control:focus {
-        border-color: #2196f3;
-        -webkit-box-shadow: none;
-        box-shadow: none; 
-    }
+.form-control:focus {
+    border-color: #2196f3;
+    -webkit-box-shadow: none;
+    box-shadow: none; 
+}
+.dropdown-menu{
+    box-shadow:none;
+    -webkit-box-shadow: none;
+}
