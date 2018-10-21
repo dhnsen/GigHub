@@ -30,6 +30,7 @@ namespace GigHub.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(GigFormViewModel viewModel)
         {
+            ViewBag.ShowTheModel = viewModel.Genre.ToString();
             if (!ModelState.IsValid)
             {
                 viewModel.Genres = _context.Genres.ToList();
