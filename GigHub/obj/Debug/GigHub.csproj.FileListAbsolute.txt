@@ -251,3 +251,4 @@ C:\Users\Admin\source\repos\GigHub\GigHub\obj\Debug\GigHub.pdb
 C:\Users\dhnsen\source\repos\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddForeignKeyPropertiesToGig.resources
 C:\Users\Admin\source\repos\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddForeignKeyPropertiesToGig.resources
 C:\Users\Admin\source\repos\GigHub\GigHub\obj\Debug\GigHub.Migrations.addNameToApplicationUser.resources
+C:\Users\Admin\source\repos\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddAttendance.resources
