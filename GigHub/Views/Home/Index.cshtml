@@ -4,7 +4,7 @@
 }
 
 <ul class="gigs">
-    @foreach(var gig in Model)
+    @foreach (var gig in Model)
     {
         <li>
             <div class="date">
@@ -21,8 +21,33 @@
                 </div>
                 <div class="genre">
                     @gig.Genre.Name
+                    <button data-gig-class="@gig.Id" class="btn btn-default btn-sm pull-right js-toggle-attendance">Going?</button>
                 </div>
+                
             </div>
         </li>
     }
 </ul>
+
+@section scripts
+{
+    
+    <script>
+        $(document).ready(function () {
+            $(".js-toggle-attendance").click(function (e) {
+                var button = $(e.target);
+                $.post("/api/attendances", button.attr("data-gig-id"))
+                    .done(function () {
+                        button
+                            .removeClass("btn-default")
+                            .addClass("btn-info")
+                            .text("Going");
+                    })
+                    .fail(function () {
+                        alert("Attendance Change failed!");
+                    });
+            });
+        });
+    </script>
+    
+}
