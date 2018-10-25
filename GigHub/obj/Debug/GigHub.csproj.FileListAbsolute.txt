@@ -266,3 +266,4 @@ C:\Users\dhnsen\source\repos\GigHub\GigHub\bin\System.Web.Http.xml
 C:\Users\dhnsen\source\repos\GigHub\GigHub\bin\System.Web.Http.WebHost.xml
 C:\Users\dhnsen\source\repos\GigHub\GigHub\obj\Debug\GigHub.Migrations.addNameToApplicationUser.resources
 C:\Users\dhnsen\source\repos\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddAttendance.resources
+C:\Users\dhnsen\source\repos\GigHub\GigHub\obj\Debug\GigHub.Migrations.addFollowing.resources

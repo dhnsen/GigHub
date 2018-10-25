@@ -18,12 +18,14 @@
             <div class="details">
                 <div class="artist">
                     @gig.Artist.Name
+                    <button data-artist-id="@gig.ArtistId" class="btn btn-default btn-sm pull-right js-toggle-following">Follow Artist</button>
+
                 </div>
                 <div class="genre">
                     @gig.Genre.Name
                     <button data-gig-id="@gig.Id" class="btn btn-default btn-sm pull-right js-toggle-attendance">Going?</button>
                 </div>
-                
+
             </div>
         </li>
     }
@@ -31,7 +33,7 @@
 
 @section scripts
 {
-    
+
     <script>
         $(document).ready(function () {
             $(".js-toggle-attendance").click(function (e) {
@@ -49,5 +51,22 @@
             });
         });
     </script>
-    
+    <script>
+        $(document).ready(function () {
+            $(".js-toggle-following").click(function (e) {
+                var button = $(e.target);
+                $.post("/api/following", { FollowedId: button.attr("data-artist-id") })
+                    .done(function () {
+                        button
+                            .removeClass("btn-default")
+                            .addClass("btn-info")
+                            .text("Following");
+                    })
+                    .fail(function () {
+                        alert("Following Change failed!");
+                    });
+            });
+        });
+    </script>
+
 }
