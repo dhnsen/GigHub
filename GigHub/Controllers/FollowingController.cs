@@ -25,12 +25,12 @@ namespace GigHub.Controllers
             var userId = User.Identity.GetUserId();
 
 
-            if (_context.Followings.Any(f => f.FollowerId == userId && f.FollowedId == dto.FollowedId))
+            if (_context.Followings.Any(f => f.FollowerId == userId && f.FolloweeId == dto.FollowedId))
                 return BadRequest("You are already following this artist");
 
             var following = new Following
             {
-                FollowedId = dto.FollowedId,
+                FolloweeId = dto.FollowedId,
                 FollowerId = userId
             };
             _context.Followings.Add(following);
