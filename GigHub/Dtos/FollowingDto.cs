@@ -7,7 +7,7 @@ namespace GigHub.Dtos
 {
     public class FollowingDto
     {
-        public string FollowedId { get; set; }
+        public string FolloweeId { get; set; }
 
     }
 }
