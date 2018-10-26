@@ -4,7 +4,7 @@
 }
 
 <ul class="gigs">
-    @foreach (var gig in Model.UpcomingGigs)
+    @foreach (var gig in Model.UpComingGigs)
     {
         <li>
             <div class="date">
@@ -18,14 +18,19 @@
             <div class="details">
                 <div class="artist">
                     @gig.Artist.Name
-                    <button data-artist-id="@gig.ArtistId" class="btn btn-link pull-right js-toggle-following">Follow Artist</button>
-
+                    @if (Model.ShowActions)
+                    {
+                        <button data-artist-id="@gig.ArtistId" class="btn btn-link pull-right js-toggle-following">Follow Artist</button>
+                    }
                 </div>
                 <div class="genre">
                     @gig.Genre.Name
-                    <button data-gig-id="@gig.Id" class="btn btn-default btn-sm pull-right js-toggle-attendance">Going?</button>
-                </div>
 
+                </div>
+                @if (Model.ShowActions)
+                {
+                    <button data-gig-id="@gig.Id" class="btn btn-default btn-sm pull-right js-toggle-attendance">Going?</button>
+                }
             </div>
         </li>
     }
