@@ -23,13 +23,14 @@ namespace GigHub.Controllers
                 .Include(g => g.Genre)
                 .Where(g => g.DateTime > DateTime.Now);
 
-            var viewModel = new HomeViewModel
+            var viewModel = new GigsViewModel
             {
                 UpComingGigs = upcomingGigs,
-                ShowActions = User.Identity.IsAuthenticated
+                ShowActions = User.Identity.IsAuthenticated,
+                Heading = "Gigs I'm Attending"
             };
 
-            return View(viewModel);
+            return View("Gigs",viewModel);
         }
 
         public ActionResult About()
