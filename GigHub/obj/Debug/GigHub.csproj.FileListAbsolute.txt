@@ -268,3 +268,4 @@ C:\Users\dhnsen\source\repos\GigHub\GigHub\obj\Debug\GigHub.Migrations.addNameTo
 C:\Users\dhnsen\source\repos\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddAttendance.resources
 C:\Users\dhnsen\source\repos\GigHub\GigHub\obj\Debug\GigHub.Migrations.addFollowing.resources
 C:\Users\Admin\source\repos\GigHub\GigHub\obj\Debug\GigHub.Migrations.addFollowing.resources
+C:\Users\Admin\source\repos\GigHub\GigHub\obj\Debug\GigHub.Migrations.addIsCanceledToGig.resources
