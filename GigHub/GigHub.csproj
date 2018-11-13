@@ -206,14 +206,14 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\FollowingController.cs" />
+    <Compile Include="Api\FollowingController.cs" />
     <Compile Include="Migrations\201811081041213_addIsCanceledToGig.cs" />
     <Compile Include="Migrations\201811081041213_addIsCanceledToGig.Designer.cs">
       <DependentUpon>201811081041213_addIsCanceledToGig.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\GigsViewModel.cs" />
     <Compile Include="Dtos\AttendanceDto.cs" />
-    <Compile Include="Controllers\AttendancesController.cs" />
+    <Compile Include="Api\AttendancesController.cs" />
     <Compile Include="Controllers\GigsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
