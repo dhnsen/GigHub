@@ -58,7 +58,7 @@ namespace GigHub.Controllers
                 Genres = _context.Genres.ToList(),
                 Heading = "Add a Gig"
             };
-            return View(viewModel);
+            return View("GigForm",viewModel);
         }
         [Authorize]
         [HttpPost]
@@ -89,6 +89,7 @@ namespace GigHub.Controllers
         {
             var userId = User.Identity.GetUserId();
             var gig = _context.Gigs.Single(g => g.Id == id && g.ArtistId == userId);
+
             var viewModel = new GigFormViewModel
             {
                 Heading = "Edit a Gig",
@@ -100,7 +101,7 @@ namespace GigHub.Controllers
                 Id = gig.Id
             };
             
-            return View("Create", viewModel);
+            return View("GigForm", viewModel);
         }
 
         [Authorize]
@@ -108,7 +109,6 @@ namespace GigHub.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Update(GigFormViewModel viewModel)
         {
-            ViewBag.ShowTheModel = viewModel.Genre.ToString();
             if (!ModelState.IsValid)
             {
                 viewModel.Genres = _context.Genres.ToList();
