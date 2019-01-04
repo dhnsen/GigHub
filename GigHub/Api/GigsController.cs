@@ -19,6 +19,8 @@ namespace GigHub.Api
             _context = new ApplicationDbContext();
         }
 
+
+
         [HttpDelete]
         public IHttpActionResult Cancel(int id)
         {
