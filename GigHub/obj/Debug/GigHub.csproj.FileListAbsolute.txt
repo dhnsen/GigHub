@@ -412,3 +412,7 @@ C:\Users\User\Documents\GitHub\GigHub\GigHub\bin\System.ValueTuple.dll
 C:\Users\User\Documents\GitHub\GigHub\GigHub\bin\AutoMapper.pdb
 C:\Users\User\Documents\GitHub\GigHub\GigHub\bin\AutoMapper.xml
 C:\Users\User\Documents\GitHub\GigHub\GigHub\bin\System.ValueTuple.xml
+C:\Users\Admin\source\repos\GigHub\GigHub\bin\AutoMapper.dll
+C:\Users\Admin\source\repos\GigHub\GigHub\bin\System.ValueTuple.dll
+C:\Users\Admin\source\repos\GigHub\GigHub\bin\AutoMapper.xml
+C:\Users\Admin\source\repos\GigHub\GigHub\bin\System.ValueTuple.xml
