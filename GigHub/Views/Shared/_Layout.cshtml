@@ -43,27 +43,50 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+<script type="text/x-template" id="notifications-template">
+    <ul>
+        <%
+        _.each(notifications, function(notification){
+        if (notification.type == 1) { %>
+        <li><%= notification.gig.artist.name %> has cancelled gig at <%= notification.gig.venue %> at <%= notification.gig.dateTime %>.</li>
 
+        <% }
+        if (notification.type == 2) { %>
+        <li><%= notification.gig.artist.name %> has updated gig at <%= notification.gig.venue %> at <%= notification.gig.dateTime %>.</li>
+
+        <% }
+        })
+        %>
+    </ul>
+
+</script>
 <script>
     $(document).ready(function () {
         $.getJSON("api/notifications", function (notifications) {
+            if (notificaitons.length == 0)
+                return;
+
             $(".js-notifications-count")
                 .text(notifications.length)
                 .removeClass("hide")
                 .addClass("animated bounceInDown")
                 ;
+
+            $(".notifications").popover({
+                html: true,
+                title: "Notifications",
+                content: function () {
+                    var compiled = _.template($("#notifications-template").html());
+                    return compiled({ notifications: notifications });
+
+                },
+                placement: "bottom"
+
+
+            });
         });
 
-        $(".notifications").popover({
-            html: true,
-            title: "Notifications",
-            content: function () {
-                return "Hello World";
-            },
-            placement: "bottom"
-            
-            
-        });
+        
 
 
     });
