@@ -144,6 +144,16 @@ display: block;
     display: block;
 }
 
+ul.notifications {
+    list-style: none;
+    padding-left: 0;
+}
 
+ul.notifications > li {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
 
-
+ul.notifications >li:last-child {
+    border-bottom: none;
+}

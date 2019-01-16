@@ -44,7 +44,7 @@
 </body>
 </html>
 <script type="text/x-template" id="notifications-template">
-    <ul>
+    <ul class="notifications">
         <%
         _.each(notifications, function(notification){
         if (notification.type == 1) { %>
@@ -63,7 +63,7 @@
 <script>
     $(document).ready(function () {
         $.getJSON("api/notifications", function (notifications) {
-            if (notificaitons.length == 0)
+            if (notifications.length == 0)
                 return;
 
             $(".js-notifications-count")
@@ -81,7 +81,7 @@
 
                 },
                 placement: "bottom"
-
+                
 
             });
         });
