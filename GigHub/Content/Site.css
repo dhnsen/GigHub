@@ -21,7 +21,9 @@
     font-weight: bold;
 }
 
-.voffset { margin-top : 2px; }
+.voffset { 
+    margin-top : 2px; 
+}
 .voffset1 {
     margin-top: 5px;
 }
