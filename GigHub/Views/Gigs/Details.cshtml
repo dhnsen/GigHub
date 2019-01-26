@@ -1,0 +1,30 @@
+﻿@model GigHub.ViewModels.GigViewModel
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2> @Model.Artist.Name </h2>
+@if (Model.ShowActions)
+{
+    <button data-artist-id="@Model.ArtistId" class="btn btn-link pull-right js-toggle-following">Follow Artist</button>
+}
+
+
+
+<script>
+    $(document).ready(function () {
+        $(".js-toggle-following").click(function (e) {
+            var button = $(e.target);
+            $.post("/api/following", { FolloweeId: button.attr("data-artist-id") })
+                .done(function () {
+                    button
+                        .removeClass("btn-default")
+                        .addClass("btn-info")
+                        .text("Following");
+                })
+                .fail(function () {
+                    alert("Following Change failed!");
+                });
+        });
+    });
+</script>

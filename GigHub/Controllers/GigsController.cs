@@ -29,6 +29,24 @@ namespace GigHub.Controllers
             return View(gigs);
         }
 
+        public ActionResult Details()
+        {
+            
+            var gig = _context.Gigs.Single(g => g.Id == 21);
+            var viewModel = new GigViewModel
+            {
+                Id = gig.Id,
+                IsCanceled = gig.IsCanceled,
+                Artist = gig.Artist,
+                ArtistId = gig.ArtistId,
+                DateTime = gig.DateTime,
+                Venue = gig.Venue,
+                Genre = gig.Genre,
+                GenreId = gig.GenreId
+            };
+            return View(viewModel);
+        }
+
         [Authorize]
         public ActionResult Attending()
         {
