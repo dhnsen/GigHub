@@ -29,24 +29,6 @@ namespace GigHub.Controllers
             return View(gigs);
         }
 
-        public ActionResult Details()
-        {
-            
-            var gig = _context.Gigs.Single(g => g.Id == 21);
-            var viewModel = new GigViewModel
-            {
-                Id = gig.Id,
-                IsCanceled = gig.IsCanceled,
-                Artist = gig.Artist,
-                ArtistId = gig.ArtistId,
-                DateTime = gig.DateTime,
-                Venue = gig.Venue,
-                Genre = gig.Genre,
-                GenreId = gig.GenreId
-            };
-            return View(viewModel);
-        }
-
         [Authorize]
         public ActionResult Attending()
         {
@@ -120,6 +102,30 @@ namespace GigHub.Controllers
             };
             
             return View("GigForm", viewModel);
+        }
+        public ActionResult Details(int id)
+        {
+
+            var gig = _context.Gigs
+                .Include(g => g.Artist)
+                .Include(g => g.Genre)
+                .SingleOrDefault(g => g.Id == id);
+
+            if (gig == null) return HttpNotFound();
+
+            var viewModel = new GigViewModel { Gig = gig };
+
+            if (User.Identity.IsAuthenticated)
+            {
+                var userId = User.Identity.GetUserId();
+
+                viewModel.IsAttending = _context.Attendances
+                    .Any(a => a.GigId == gig.Id && a.AttendeeId == userId);
+
+                viewModel.IsFollowing = _context.Followings
+                    .Any(f => f.FolloweeId == gig.ArtistId && f.FollowerId == userId);
+            }
+            return View("Details", viewModel);
         }
 
         [Authorize]

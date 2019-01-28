@@ -22,7 +22,9 @@
         <li>
             <div class="date">
                 <div class="month">
-                    @gig.DateTime.ToString("MMM")
+                    
+                        @gig.DateTime.ToString("MMM")
+                    
                 </div>
                 <div class="day">
                     @gig.DateTime.ToString("d ")
@@ -30,24 +32,27 @@
             </div>
             <div class="details">
                 <div class="artist">
-                    @gig.Artist.Name
-
-                    @if (gig.IsCanceled)
-                    {
-                        <span class="label label-warning">Canceled</span>
-                    }
-                    @if (Model.ShowActions)
-                    {
-                        <button data-artist-id="@gig.ArtistId" class="btn btn-link pull-right js-toggle-following">Follow Artist</button>
-                    }
-                </div>
+                    <a href="@Url.Action("Details", "Gigs", new {id = gig.Id})">
+                        @gig.Artist.Name
+                    </a>
+                                        @if (gig.IsCanceled)
+                                        {
+                                            <span class="label label-warning">Canceled</span>
+                                        }
+                                        @if (Model.ShowActions)
+                                        {
+                                            <button data-artist-id="@gig.ArtistId" class="btn btn-link pull-right js-toggle-following">Follow Artist</button>
+                                        }
+</div>
                 <div class="genre">
                     @gig.Genre.Name
 
                 </div>
                 @if (Model.ShowActions && gig.IsCanceled == false)
                 {
-                    <button data-gig-id="@gig.Id" class="btn btn-default btn-sm pull-right js-toggle-attendance">Going?</button>
+                    <button data-gig-id="@gig.Id" class="btn 
+                            @(Model.Attendances.Contains(gig.Id) ? "btn-info" : "btn-default") 
+                            btn-sm pull-right js-toggle-attendance">Going?</button>
                 }
             </div>
         </li>
