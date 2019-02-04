@@ -20,7 +20,7 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Date)
-        @Html.TextBoxFor(m => m.Date, new { @class = "form-control", @id = "datepicker", @Value = @DateTime.Now.ToShortDateString() })
+        @Html.TextBoxFor(m => m.Date, new { @class = "form-control", @id = "datepicker"})
         @Html.ValidationMessageFor(m => m.Date)
     </div>
     <div class="form-group">

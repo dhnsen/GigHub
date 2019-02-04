@@ -66,8 +66,9 @@ namespace GigHub.Controllers
                 Genres = _context.Genres.ToList(),
                 Heading = "Add a Gig"
             };
-            return View("GigForm",viewModel);
+            return View("GigForm", viewModel);
         }
+
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -77,7 +78,7 @@ namespace GigHub.Controllers
             if (!ModelState.IsValid)
             {
                 viewModel.Genres = _context.Genres.ToList();
-                return View("Create", viewModel);
+                return View("GigForm", viewModel);
             }
 
             var gig = new Gig
