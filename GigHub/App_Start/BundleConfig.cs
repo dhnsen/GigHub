@@ -20,7 +20,11 @@ namespace GigHub
                         "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
-                        "~/Scripts/app/app.js"));
+                        "~/Scripts/app/services/attendanceService.js",
+                        "~/Scripts/app/controllers/gigsController.js",
+                        "~/Scripts/app/app.js"
+                        
+                        ));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
